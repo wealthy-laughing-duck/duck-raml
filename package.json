@@ -1,0 +1,23 @@
+{
+  "name": "duck-raml",
+  "version": "1.0.0",
+  "description": "RAML contract for wealthy Laughing Duck project",
+  "main": "contract.raml",
+  "scripts": {
+    "start": "raml2html contract.raml -o index.html && http-server"
+  },
+  "author": "Tomasz Ducin <tomasz@ducin.it>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wealthy-laughing-duck/duck-raml.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wealthy-laughing-duck/duck-raml/issues"
+  },
+  "homepage": "https://github.com/wealthy-laughing-duck/duck-raml#readme",
+  "dependencies": {
+    "http-server": "^0.9.0",
+    "raml2html": "^2.4.0"
+  }
+}
