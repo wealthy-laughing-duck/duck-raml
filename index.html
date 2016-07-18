@@ -1,0 +1,445 @@
+<!DOCTYPE HTML><html><head><title>Wealthy Laughing Duck API API documentation</title><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="generator" content="https://github.com/kevinrenskers/raml2html 2.4.0"><link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css"><script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script><script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script><script type="text/javascript">
+      $(document).ready(function() {
+        $('.page-header pre code, .top-resource-description pre code').each(function(i, block) {
+          hljs.highlightBlock(block);
+        });
+
+        $('[data-toggle]').click(function() {
+          var selector = $(this).data('target') + ' pre code';
+          $(selector).each(function(i, block) {
+            hljs.highlightBlock(block);
+          });
+        });
+
+        // open modal on hashes like #_action_get
+        $(window).bind('hashchange', function(e) {
+          var anchor_id = document.location.hash.substr(1); //strip #
+          var element = $('#' + anchor_id);
+
+          // do we have such element + is it a modal?  --> show it
+          if (element.length && element.hasClass('modal')) {
+            element.modal('show');
+          }
+        });
+
+        // execute hashchange on first page load
+        $(window).trigger('hashchange');
+
+        // remove url fragment on modal hide
+        $('.modal').on('hidden.bs.modal', function() {
+          try {
+            if (history && history.replaceState) {
+                history.replaceState({}, '', '#');
+            }
+          } catch(e) {}
+        });
+      });
+    </script><style>
+      .hljs {
+        background: transparent;
+      }
+      .parent {
+        color: #999;
+      }
+      .list-group-item > .badge {
+        float: none;
+        margin-right: 6px;
+      }
+      .panel-title > .methods {
+        float: right;
+      }
+      .badge {
+        border-radius: 0;
+        text-transform: uppercase;
+        width: 70px;
+        font-weight: normal;
+        color: #f3f3f6;
+        line-height: normal;
+      }
+      .badge_get {
+        background-color: #63a8e2;
+      }
+      .badge_post {
+        background-color: #6cbd7d;
+      }
+      .badge_put {
+        background-color: #22bac4;
+      }
+      .badge_delete {
+        background-color: #d26460;
+      }
+      .badge_patch {
+        background-color: #ccc444;
+      }
+      .list-group, .panel-group {
+        margin-bottom: 0;
+      }
+      .panel-group .panel+.panel-white {
+        margin-top: 0;
+      }
+      .panel-group .panel-white {
+        border-bottom: 1px solid #F5F5F5;
+        border-radius: 0;
+      }
+      .panel-white:last-child {
+        border-bottom-color: white;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+      .panel-white .panel-heading {
+        background: white;
+      }
+      .tab-pane ul {
+        padding-left: 2em;
+      }
+      .tab-pane h2 {
+        font-size: 1.2em;
+        padding-bottom: 4px;
+        border-bottom: 1px solid #ddd;
+      }
+      .tab-pane h3 {
+        font-size: 1.1em;
+      }
+      .tab-content {
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        padding: 10px;
+      }
+      #sidebar {
+        margin-top: 30px;
+        padding-right: 5px;
+        overflow: auto;
+        height: 90%;
+      }
+      .top-resource-description {
+        border-bottom: 1px solid #ddd;
+        background: #fcfcfc;
+        padding: 15px 15px 0 15px;
+        margin: -15px -15px 10px -15px;
+      }
+      .resource-description {
+        border-bottom: 1px solid #fcfcfc;
+        background: #fcfcfc;
+        padding: 15px 15px 0 15px;
+        margin: -15px -15px 10px -15px;
+      }
+      .resource-description p:last-child {
+        margin: 0;
+      }
+      .list-group .badge {
+        float: left;
+      }
+      .method_description {
+        margin-left: 85px;
+      }
+      .method_description p:last-child {
+        margin: 0;
+      }
+      .list-group-item {
+        cursor: pointer;
+      }
+      .list-group-item:hover {
+        background-color: #f5f5f5;
+      }
+    </style></head><body data-spy="scroll" data-target="#sidebar"><div class="container"><div class="row"><div class="col-md-9" role="main"><div class="page-header"><h1>Wealthy Laughing Duck API API documentation</h1><p></p><h3 id="Wealthy-Laughing-Duck"><a href="#Wealthy-Laughing-Duck">Wealthy Laughing Duck</a></h3><p>This is a workshop project</p><h3 id="Technologies-used"><a href="#Technologies-used">Technologies used</a></h3><p>The aim is to provide consistent API for different SPA implementations, such as Backbone, Angular &amp; React</p></div><div class="panel panel-default"><div class="panel-heading"><h3 id="users" class="panel-title">Users</h3></div><div class="panel-body"><div class="top-resource-description"><p>A collection of users</p></div><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_users"><span class="parent"></span>/users</a> <span class="methods"><a href="#users_get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_users" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#users_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Fetch list of all users</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="users_get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/users</h4></div><div class="modal-body"><div class="alert alert-info"><p>Fetch list of all users</p></div><ul class="nav nav-tabs"><li class="active"><a href="#users_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="users_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "integer"
+      },
+      "firstName": {
+        "type": "string"
+      },
+      "lastName": {
+        "type": "string"
+      },
+      "emailAddress": {
+        "type": "string"
+      },
+      "userName": {
+        "type": "string"
+      },
+      "createdAt": {
+        "type": "string"
+      },
+      "updatedAt": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "id",
+      "firstName",
+      "lastName",
+      "emailAddress",
+      "userName",
+      "createdAt",
+      "updatedAt"
+    ]
+  }
+}
+</code></pre><p><strong>Example</strong>:</p><pre><code>[
+  {
+    "id": 10,
+    "firstName": "Ringo",
+    "lastName": "Starr",
+    "emailAddress": "george.harrison@beattles.com",
+    "userName": "rs",
+    "createdAt": "1940-07-07 06:03:07",
+    "updatedAt": "2013-03-04 07:03:18"
+  },
+  {
+    "id": 11,
+    "firstName": "George",
+    "lastName": "Harrison",
+    "emailAddress": "george.harrison@beattles.com",
+    "userName": "gh",
+    "createdAt": "1943-02-25 06:59:38",
+    "updatedAt": "2001-11-29 03:07:18"
+  },
+  {
+    "id": 12,
+    "firstName": "Paul",
+    "lastName": "McCartney",
+    "emailAddress": "paul.mccartney@beattles.com",
+    "userName": "pmc",
+    "createdAt": "1942-06-18 06:38:59",
+    "updatedAt": "2015-07-02 21:18:07"
+  },
+  {
+    "id": 13,
+    "firstName": "John",
+    "lastName": "Lennon",
+    "emailAddress": "jonh.lennon@beattles.com",
+    "userName": "jl",
+    "createdAt": "1940-10-09 19:22:26",
+    "updatedAt": "1980-12-08 13:17:25"
+  }
+]
+</code></pre></div></div></div></div></div></div></div><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_users__id_"><span class="parent">/users</span>/{id}</a> <span class="methods"><a href="#users__id__get"><span class="badge badge_get">get</span></a></span></h4></div><div id="panel_users__id_" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#users__id__get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Fetch a single users by <code>id</code></p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="users__id__get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent">/users</span>/{id}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Fetch a single users by <code>id</code></p></div><ul class="nav nav-tabs"><li class="active"><a href="#users__id__get_request" data-toggle="tab">Request</a></li><li><a href="#users__id__get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="users__id__get_request"><h3>URI Parameters</h3><ul><li><strong>User ID</strong>: <em>required (integer)</em></li></ul></div><div class="tab-pane" id="users__id__get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "emailAddress": {
+      "type": "string"
+    },
+    "userName": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "updatedAt": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "firstName",
+    "lastName",
+    "emailAddress",
+    "userName",
+    "createdAt",
+    "updatedAt"
+  ]
+}
+</code></pre><p><strong>Example</strong>:</p><pre><code>{
+  "id": 13,
+  "firstName": "John",
+  "lastName": "Lennon",
+  "emailAddress": "john.lennon@beattles.com",
+  "userName": "jl",
+  "createdAt": "1940-10-09 19:22:26",
+  "updatedAt": "1980-12-08 13:17:25"
+}
+</code></pre></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="incomes" class="panel-title">Incomes</h3></div><div class="panel-body"><div class="top-resource-description"><p>A collection of incomes (money earned)</p></div><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_incomes"><span class="parent"></span>/incomes</a> <span class="methods"><a href="#incomes_get"><span class="badge badge_get">get</span></a> <a href="#incomes_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel_incomes" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#incomes_get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Fetch list of all incomes (might be very long)</p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#incomes_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"><p>Create an income</p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="incomes_get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent"></span>/incomes</h4></div><div class="modal-body"><div class="alert alert-info"><p>Fetch list of all incomes (might be very long)</p></div><ul class="nav nav-tabs"><li class="active"><a href="#incomes_get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="incomes_get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "integer"
+      },
+      "categoryId": {
+        "type": "integer"
+      },
+      "amount": {
+        "type": "number"
+      },
+      "description": {
+        "type": "string"
+      },
+      "createdAt": {
+        "type": "string"
+      },
+      "createdBy": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "id",
+      "categoryId",
+      "amount",
+      "description",
+      "createdAt",
+      "createdBy"
+    ]
+  }
+}
+</code></pre><p><strong>Example</strong>:</p><pre><code>[
+  {
+    "id": 1,
+    "categoryId": 35,
+    "amount": 5462.84,
+    "description": "selling first singles",
+    "createdAt": "1961-08-10 00:00:00",
+    "createdBy": 13
+  },
+  {
+    "id": 2,
+    "categoryId": 36,
+    "amount": 346.82,
+    "description": "first audio recording profit",
+    "createdAt": "1957-02-21 00:00:00",
+    "createdBy": 14
+  },
+  {
+    "id": 3,
+    "categoryId": 37,
+    "amount": 8934.61,
+    "description": "Sgt. Peppers charity meeting",
+    "createdAt": "1967-08-10 00:00:00",
+    "createdBy": 13
+  }
+]
+</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="incomes_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/incomes</h4></div><div class="modal-body"><div class="alert alert-info"><p>Create an income</p></div><ul class="nav nav-tabs"><li class="active"><a href="#incomes_post_request" data-toggle="tab">Request</a></li></ul><div class="tab-content"><div class="tab-pane active" id="incomes_post_request"><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "categoryId": {
+      "type": "integer"
+    },
+    "amount": {
+      "type": "number"
+    },
+    "description": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "createdBy": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "id",
+    "categoryId",
+    "amount",
+    "description",
+    "createdAt",
+    "createdBy"
+  ]
+}
+</code></pre><p><strong>Example</strong>:</p><pre><code>{
+  "id": 1,
+  "categoryId": 35,
+  "amount": 5462.84,
+  "description": "salary august 2011",
+  "createdAt": "2011-08-10 00:00:00",
+  "createdBy": 13
+}</code></pre></div></div></div></div></div></div></div><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_incomes__id_"><span class="parent">/incomes</span>/{id}</a> <span class="methods"><a href="#incomes__id__get"><span class="badge badge_get">get</span></a> <a href="#incomes__id__put"><span class="badge badge_put">put</span></a> <a href="#incomes__id__delete"><span class="badge badge_delete">delete</span></a></span></h4></div><div id="panel_incomes__id_" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#incomes__id__get'" class="list-group-item"><span class="badge badge_get">get</span><div class="method_description"><p>Fetch a single income by <code>id</code></p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#incomes__id__put'" class="list-group-item"><span class="badge badge_put">put</span><div class="method_description"><p>Update a single income by <code>id</code></p></div><div class="clearfix"></div></div><div onclick="window.location.href = '#incomes__id__delete'" class="list-group-item"><span class="badge badge_delete">delete</span><div class="method_description"><p>Delete a single income by <code>id</code></p></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="incomes__id__get"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_get">get</span> <span class="parent">/incomes</span>/{id}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Fetch a single income by <code>id</code></p></div><ul class="nav nav-tabs"><li class="active"><a href="#incomes__id__get_request" data-toggle="tab">Request</a></li><li><a href="#incomes__id__get_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="incomes__id__get_request"><h3>URI Parameters</h3><ul><li><strong>Income ID</strong>: <em>required (integer)</em></li></ul></div><div class="tab-pane" id="incomes__id__get_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "categoryId": {
+      "type": "integer"
+    },
+    "amount": {
+      "type": "number"
+    },
+    "description": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "createdBy": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "id",
+    "categoryId",
+    "amount",
+    "description",
+    "createdAt",
+    "createdBy"
+  ]
+}
+</code></pre><p><strong>Example</strong>:</p><pre><code>{
+  "id": 1,
+  "categoryId": 35,
+  "amount": 5462.84,
+  "description": "salary august 2011",
+  "createdAt": "2011-08-10 00:00:00",
+  "createdBy": 13
+}</code></pre></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="incomes__id__put"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_put">put</span> <span class="parent">/incomes</span>/{id}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Update a single income by <code>id</code></p></div><ul class="nav nav-tabs"><li class="active"><a href="#incomes__id__put_request" data-toggle="tab">Request</a></li><li><a href="#incomes__id__put_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="incomes__id__put_request"><h3>URI Parameters</h3><ul><li><strong>Income ID</strong>: <em>required (integer)</em></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "categoryId": {
+      "type": "integer"
+    },
+    "amount": {
+      "type": "number"
+    },
+    "description": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "createdBy": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "id",
+    "categoryId",
+    "amount",
+    "description",
+    "createdAt",
+    "createdBy"
+  ]
+}
+</code></pre><p><strong>Example</strong>:</p><pre><code>{
+  "id": 1,
+  "categoryId": 35,
+  "amount": 5462.84,
+  "description": "salary august 2011",
+  "createdAt": "2011-08-10 00:00:00",
+  "createdBy": 13
+}</code></pre></div><div class="tab-pane" id="incomes__id__put_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p></div></div></div></div></div></div><div class="modal fade" tabindex="0" id="incomes__id__delete"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_delete">delete</span> <span class="parent">/incomes</span>/{id}</h4></div><div class="modal-body"><div class="alert alert-info"><p>Delete a single income by <code>id</code></p></div><ul class="nav nav-tabs"><li class="active"><a href="#incomes__id__delete_request" data-toggle="tab">Request</a></li><li><a href="#incomes__id__delete_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="incomes__id__delete_request"><h3>URI Parameters</h3><ul><li><strong>Income ID</strong>: <em>required (integer)</em></li></ul></div><div class="tab-pane" id="incomes__id__delete_response"><h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2><h3>Body</h3><p><strong>Type: application/json</strong></p></div></div></div></div></div></div></div></div></div></div></div><div class="col-md-3"><div id="sidebar" class="hidden-print affix" role="complementary"><ul class="nav nav-pills nav-stacked"><li><a href="#users">Users</a></li><li><a href="#incomes">Incomes</a></li></ul></div></div></div></div></body></html>

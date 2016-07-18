@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "categoryId": 35,
+    "amount": 5462.84,
+    "description": "selling first singles",
+    "createdAt": "1961-08-10 00:00:00",
+    "createdBy": 13
+  },
+  {
+    "id": 2,
+    "categoryId": 36,
+    "amount": 346.82,
+    "description": "first audio recording profit",
+    "createdAt": "1957-02-21 00:00:00",
+    "createdBy": 14
+  },
+  {
+    "id": 3,
+    "categoryId": 37,
+    "amount": 8934.61,
+    "description": "Sgt. Peppers charity meeting",
+    "createdAt": "1967-08-10 00:00:00",
+    "createdBy": 13
+  }
+]

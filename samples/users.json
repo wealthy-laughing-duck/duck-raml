@@ -1,0 +1,38 @@
+[
+  {
+    "id": 10,
+    "firstName": "Ringo",
+    "lastName": "Starr",
+    "emailAddress": "george.harrison@beattles.com",
+    "userName": "rs",
+    "createdAt": "1940-07-07 06:03:07",
+    "updatedAt": "2013-03-04 07:03:18"
+  },
+  {
+    "id": 11,
+    "firstName": "George",
+    "lastName": "Harrison",
+    "emailAddress": "george.harrison@beattles.com",
+    "userName": "gh",
+    "createdAt": "1943-02-25 06:59:38",
+    "updatedAt": "2001-11-29 03:07:18"
+  },
+  {
+    "id": 12,
+    "firstName": "Paul",
+    "lastName": "McCartney",
+    "emailAddress": "paul.mccartney@beattles.com",
+    "userName": "pmc",
+    "createdAt": "1942-06-18 06:38:59",
+    "updatedAt": "2015-07-02 21:18:07"
+  },
+  {
+    "id": 13,
+    "firstName": "John",
+    "lastName": "Lennon",
+    "emailAddress": "jonh.lennon@beattles.com",
+    "userName": "jl",
+    "createdAt": "1940-10-09 19:22:26",
+    "updatedAt": "1980-12-08 13:17:25"
+  }
+]
