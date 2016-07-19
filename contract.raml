@@ -46,6 +46,35 @@ documentation:
               example: !include samples/users/_id_.json
               schema: !include schemas/user-item.json
 
+/categories:
+  displayName: Categories
+  description: |
+    Categories of incomes and outcomes used throughout the system
+  /incomes:
+    get:
+      description: |
+        Fetch list of all income categories
+    /{id}:
+      uriParameters:
+        id:
+          displayName: Income Category ID
+          type: integer
+      get:
+        description: |
+          Fetch a single income category by `id`
+  /outcomes:
+    get:
+      description: |
+        Fetch list of all outcome categories
+    /{id}:
+      uriParameters:
+        id:
+          displayName: Outcome Category ID
+          type: integer
+      get:
+        description: |
+          Fetch a single income category by `id`
+
 /incomes:
   displayName: Incomes
   description: |
@@ -92,6 +121,58 @@ documentation:
               example: !!null
     delete:
       description: Delete a single income by `id`
+      responses:
+        200:
+          body:
+            application/json:
+              example: !!null
+
+/outcomes:
+  displayName: Outcomes
+  description: |
+    A collection of outcomes (money spent)
+  get:
+    description: |
+      Fetch list of all outcomes (might be very long)
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include samples/incomes.json
+            schema: !include schemas/income-collection.json
+  post:
+    description: Create an outcome
+    body:
+      application/json:
+        example: !include samples/incomes/_id_.json
+        schema: !include schemas/income-item.json
+  /{id}:
+    uriParameters:
+      id:
+        displayName: Outcome ID
+        type: integer
+    get:
+      description: |
+        Fetch a single outcome by `id`
+      responses:
+        200:
+          body:
+            application/json:
+              example: !include samples/incomes/_id_.json
+              schema: !include schemas/income-item.json
+    put:
+      description: Update a single outcome by `id`
+      body:
+        application/json:
+          example: !include samples/incomes/_id_.json
+          schema: !include schemas/income-item.json
+      responses:
+        200:
+          body:
+            application/json:
+              example: !!null
+    delete:
+      description: Delete a single outcome by `id`
       responses:
         200:
           body:
