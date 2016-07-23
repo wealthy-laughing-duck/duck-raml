@@ -9,7 +9,8 @@
         "minimum": 1
       },
       "categoryId": {
-        "type": "integer"
+        "type": "integer",
+        "minimum": 1
       },
       "amount": {
         "type": "number",
