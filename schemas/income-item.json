@@ -9,16 +9,19 @@
       "type": "integer"
     },
     "amount": {
-      "type": "number"
+      "type": "number",
+      "faker": "finance.amount"
     },
     "description": {
       "type": "string"
     },
     "createdAt": {
-      "type": "string"
+      "type": "string",
+      "faker": "date.past"
     },
     "createdBy": {
-      "type": "integer"
+      "type": "integer",
+      "minimum": 1
     }
   },
   "required": [

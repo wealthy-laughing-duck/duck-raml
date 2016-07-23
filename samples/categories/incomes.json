@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "parentId": null,
+    "name": "salaries",
+    "createdAt": "2011-10-26 17:44:22",
+    "updatedAt": "2011-10-26 17:44:22"
+  },
+  {
+    "id": 2,
+    "parentId": 1,
+    "name": "regular salary",
+    "createdAt": "2011-10-26 17:45:41",
+    "updatedAt": "2011-10-26 17:45:41"
+  },
+  {
+    "id": 3,
+    "parentId": 1,
+    "name": "bonuses",
+    "createdAt": "2011-10-26 17:46:16",
+    "updatedAt": "2011-10-26 17:46:16"
+  }
+]

@@ -54,6 +54,12 @@ documentation:
     get:
       description: |
         Fetch list of all income categories
+      responses:
+        200:
+          body:
+            application/json:
+              example: !include samples/categories/incomes.json
+              schema: !include schemas/category-collection.json
     /{id}:
       uriParameters:
         id:
@@ -62,10 +68,22 @@ documentation:
       get:
         description: |
           Fetch a single income category by `id`
+        responses:
+          200:
+            body:
+              application/json:
+                example: !include samples/categories/incomes/_id_.json
+                schema: !include schemas/category-item.json
   /outcomes:
     get:
       description: |
         Fetch list of all outcome categories
+      responses:
+        200:
+          body:
+            application/json:
+              example: !include samples/categories/incomes.json
+              schema: !include schemas/category-collection.json
     /{id}:
       uriParameters:
         id:
@@ -74,6 +92,12 @@ documentation:
       get:
         description: |
           Fetch a single income category by `id`
+        responses:
+          200:
+            body:
+              application/json:
+                example: !include samples/categories/incomes/_id_.json
+                schema: !include schemas/category-item.json
 
 /incomes:
   displayName: Incomes

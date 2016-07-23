@@ -2,27 +2,26 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "array",
   "items": {
+    "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
     "properties": {
       "id": {
         "type": "integer",
         "minimum": 1
       },
-      "firstName": {
-        "type": "string",
-        "faker": "name.firstName"
+      "parentId": {
+        "oneOf": [{
+          "type": "null"
+        }, {
+          "type": "integer",
+          "minimum": 1
+        }]
       },
-      "lastName": {
+      "name": {
         "type": "string",
-        "faker": "name.lastName"
-      },
-      "emailAddress": {
-        "type": "string",
-        "faker": "internet.email"
-      },
-      "userName": {
-        "type": "string",
-        "faker": "internet.userName"
+        "faker": {
+          "fake": "{{company.bsBuzz}} {{company.bsAdjective}} {{company.bsNoun}}"
+        }
       },
       "createdAt": {
         "type": "string",
@@ -35,10 +34,8 @@
     },
     "required": [
       "id",
-      "firstName",
-      "lastName",
-      "emailAddress",
-      "userName",
+      "parentId",
+      "name",
       "createdAt",
       "updatedAt"
     ]
