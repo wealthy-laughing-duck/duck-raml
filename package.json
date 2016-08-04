@@ -18,6 +18,6 @@
   "homepage": "https://github.com/wealthy-laughing-duck/duck-raml#readme",
   "dependencies": {
     "http-server": "^0.9.0",
-    "raml2html": "^2.4.0"
+    "raml2html": "^2.5.0"
   }
 }
